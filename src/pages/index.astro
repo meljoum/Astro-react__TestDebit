@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Device from '../components/devices/Device';
+import Footer from '../components/Footer.astro';
+import Style from '../styles/Home.module.scss';
+import Chart from '../components/charts/Chart';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+// const { nbrMobile, nbrTablet, nbrTv, nbrOrdinateur } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		
+	</head>
+	<body>
+		<main>
+			<h1>🌐🚀 Test internet speed!</h1>
+			<div class="container">
+				<div class={Style.speed_test}>
+					<Device client:load />
+					<!-- <Chart client:load /> -->
+					<!-- <Chart nbrMobile={nbrMobile} nbrTablet={nbrTablet} nbrTv={nbrTv} nbrOrdinateur={nbrOrdinateur} client:only="react" /> -->
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

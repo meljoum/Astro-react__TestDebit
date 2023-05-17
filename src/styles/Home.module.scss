@@ -1,0 +1,367 @@
+//* Style Home SASS
+:root {
+    --color-principal: white;
+    --color-black: #010101;
+}
+
+html {
+	overflow: hidden;
+    max-height: 100vh;
+    height: 100vh;
+} 
+
+body {
+    background: transparent url("/sky-bg.png") no-repeat center / cover;
+    background-color: var(--color-black)!important;  
+}
+.devices {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 2em;
+}
+.item_device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+        margin-bottom: .5em;
+        max-width: 50px;
+    }
+    p {
+        font-size: 1em;
+        color: var(--color-principal);
+        text-transform: capitalize;
+        margin: 0 0 .5em;
+        font-weight: 400;
+    }
+    span.nbr_connected {
+        font-size: 1.5em;
+        color: var(--color-principal);
+        font-weight: 700;
+        font-family: monospace;
+    }
+}
+.choose_nbr__device {
+    display: flex;
+    gap: .5em;
+    margin-bottom: .5em;
+    .btn_device {
+        font-size: 1em;
+        color: var(--color-principal);
+        background-color: transparent;
+        border-radius: 2px;
+        padding: 0 0 3px;
+        text-decoration: none;
+        font-weight: 700;
+        width: 15px;
+        height: 15px;
+        font-family: system-ui;
+        text-align: center;
+        line-height: 0;
+        appearance: none;
+        border: 1px solid var(--color-principal);
+        transition: .35s all ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--color-principal);
+            color: var(--color-black);
+            transition: .35s all ease-in-out;
+        }
+    }
+}
+
+//* Charts Speed
+
+.charts_speed {
+    // transform: translate(-50%,-20%);
+    // top: 50%;
+    // position: absolute;
+    // left: 50%;
+
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    h3 {
+        font-size: 20px;
+        color: var(--color-principal);
+        text-align: center;
+        margin-bottom: .5em;
+    }
+}
+
+.btn_test {
+    position: absolute;
+    bottom: 0;
+
+    font-size: 1.5em;
+    color: var(--color-principal);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 0;
+    text-decoration: none;
+    font-weight: 700;
+    width: 180px;
+    height: 60px;
+    font-family: system-ui;
+    text-align: center;
+    line-height: 0;
+    vertical-align: middle;
+    appearance: none;
+    border: 2px solid var(--color-principal);
+    text-transform: uppercase;
+    margin-top: 1em;
+    transition: .35s all ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--color-principal);
+        color: var(--color-black);
+        transition: .35s all ease-in-out;
+    }
+}
+
+//* -------------------------------------------------
+// .chart {
+//     position: relative;
+//     width: 600px;
+//     height: 300px;
+//     margin: 0 auto;
+//     text-align: center;
+// }
+  
+// .circle {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     margin: auto;
+//     width: 300px;
+//     height: 300px;
+//     border-radius: 50%;
+//     border: 15px solid #f7f7f7;
+//     box-sizing: border-box;
+//     clip: rect(0px, 300px, 170px, 0px);
+// }
+  
+// .needle {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     margin: auto;
+//     width: 300px;
+//     height: 300px;
+//     transform-origin: 50% 50%;
+//     animation: rotate 2s ease-out forwards;
+//     animation-delay: 1s;
+// }
+  
+// .value {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     font-size: 24px;
+//     color: #f7f7f7;
+// }
+  
+// @keyframes rotate {
+//     from {
+//         transform: rotate(-90deg);
+//     }
+//     to {
+//         transform: rotate(90deg);
+//     }
+// }
+
+
+//* ------------------------------------------
+.chart {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #f7F7F7;
+    box-sizing: border-box;
+    clip: rect(0px,300px,170px,0px);
+    background-image: linear-gradient(to right, red, #f06d06, rgb(255, 255, 0), green);
+}
+
+.needle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    transform-origin: 50% 50%;
+}
+.needle:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 90px;
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-right: 4px solid transparent;
+    border-bottom: 150px solid rgba(255,255,255,1);
+    border-left: 4px solid transparent;
+    clip: rect(0px,10px,130px,0px);
+}
+@keyframes rotate-random {
+    from {
+        transform: rotateZ(-90deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+    to {
+        transform: rotateZ(90deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+}
+.value {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 0;
+    color: #f7f7f7;
+    background-color: #F7F7F7;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    clip: rect(0px,60px,34px,0px);	
+}
+
+.val_speed {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.val_speed .low {
+    position: absolute;
+    left: -10px;
+    font-size: 18px;
+    color: #f7f7f7;
+    font-family: monospace;
+    font-weight: 500;
+}
+.val_speed .high {
+    position: absolute;
+    right: -15px;
+    font-size: 18px;
+    color: #f7f7f7;
+    font-family: monospace;
+    font-weight: 500;
+}
+@keyframes rotate-0-20 {
+    from {
+        transform: rotateZ(-90deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+    to {
+        transform: rotateZ(-65deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+}
+
+@keyframes rotate-20-40 {
+    from {
+        transform: rotateZ(-60deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+    to {
+        transform: rotateZ(-20deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+}
+
+@keyframes rotate-40-60 {
+    from {
+        transform: rotateZ(-15deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+    to {
+        transform: rotateZ(15deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+}
+
+@keyframes rotate-60-80 {
+    from {
+        transform: rotateZ(15deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+    to {
+        transform: rotateZ(60deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+}
+
+@keyframes rotate-80-100 {
+    from {
+        transform: rotateZ(60deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+    to {
+        transform: rotateZ(90deg) matrix(1, 0, 0, 1, 0, -50);
+    }
+}
+.adsl {
+    .needle:before {
+        animation: rotate-random 1100ms ease-out infinite alternate-reverse;
+        // animation-delay: 1s;
+    }
+}
+.optical_fiber {
+    .needle:before {
+        animation: rotate-random 1100ms ease-out infinite alternate-reverse;
+        // animation-delay: 1s;
+    }
+}
+:global(.low_speed) .needle:before {
+    /* animation-name: rotate-0-20; */
+    animation: rotate-0-20 1100ms ease-out infinite alternate-reverse;
+    // animation-delay: 1s;
+}
+
+:global(.medium_speed) .needle:before {
+    /* animation-name: rotate-20-40; */
+    animation: rotate-20-40 1100ms ease-out infinite alternate-reverse;
+    // animation-delay: 1s;
+    
+}
+
+:global(.high_speed) .needle:before {
+    /* animation-name: rotate-40-60; */
+    animation: rotate-40-60 1100ms ease-out infinite alternate-reverse;
+    // animation-delay: 1s;
+}
+
+:global(.very_high_speed) .needle:before {
+    /* animation-name: rotate-60-80; */
+    animation: rotate-60-80 1100ms ease-out infinite alternate-reverse;
+    // animation-delay: 1s;
+}
+
+:global(.ultra_high_speed) .needle:before {
+    /* animation-name: rotate-80-100; */
+    animation: rotate-80-100 1100ms ease-out infinite alternate-reverse;
+    // animation-delay: 1s;
+}
